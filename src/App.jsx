@@ -40,6 +40,7 @@ function App() {
   const [text, setText] = useState('DREAMER.  RESEARCHER.  REALIZER. PARTNER. TEAM PLAYER.');
   const [progress, setProgress] = useState(0);
   const [isWhatsAppVisible, setIsWhatsAppVisible] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const { scrollYProgress } = useScroll();
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
@@ -164,7 +165,7 @@ function App() {
               isDarkMode={isDarkMode}
             />
 
-            <DevelopmentJourney isDarkMode={isDarkMode} textAnimation={textAnimation}/>
+            <DevelopmentJourney isDarkMode={isDarkMode} textAnimation={textAnimation} setShowMenu={setShowMenu}/>
 
             <InteractiveBlock
               textAnimation={textAnimation}
@@ -191,8 +192,8 @@ function App() {
           {isWhatsAppVisible && <WhatsAppChat />}
           <AnimatedTitle title="Reviews" isDarkMode={isDarkMode} textAnimation={textAnimation} />
           <Reviews isDarkMode={isDarkMode} textAnimation={textAnimation} />
-            <Menu />
-          <Footer />
+           {showMenu && <Menu />} 
+          <Footer setShowMenu={setShowMenu}/>
         </>
       )}
     </div>

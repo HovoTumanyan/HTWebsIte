@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Trans } from 'react-i18next';
 
-export default function DevelopmentJourney({ isDarkMode, textAnimation}) {
+export default function DevelopmentJourney({ isDarkMode, textAnimation,setShowMenu}) {
   const { t } = useTranslation();
   return (
     <motion.div
@@ -10,6 +10,7 @@ export default function DevelopmentJourney({ isDarkMode, textAnimation}) {
       whileInView="visible"
       variants={textAnimation}
       viewport={{ once: true }}
+      onViewportEnter={() => setShowMenu(true)}
       className={`development-journey ${isDarkMode ? 'darkMode' : 'lightMode'}`}
       id="fullstack-section"
     >

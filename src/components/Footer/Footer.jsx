@@ -1,9 +1,11 @@
-
-import './Footer.css'
-export default function Footer() {
+import { motion } from 'framer-motion';
+import './Footer.css';
+export default function Footer({ setShowMenu }) {
   return (
-    <footer className="footer"
-    
+    <motion.footer
+      className="footer"
+      onViewportEnter={() => setShowMenu(false)}
+      onViewportLeave={() => setShowMenu(true)}
     >
       <div className="current-year">
         <p>© 2024 Hovo Tumanyan</p>
@@ -27,6 +29,6 @@ export default function Footer() {
       <div className="creator">
         <p>Designed by Me (Inspired). Built by Me.</p>{' '}
       </div>
-    </footer>
+    </motion.footer>
   );
 }

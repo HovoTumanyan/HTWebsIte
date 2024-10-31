@@ -537,12 +537,15 @@ li {
   .hero-wrapper {
     order: -1;
   }
+  
   .hero-img {
     order: -1;
   }
+
   .hero-born {
     order: -1;
   }
+
   .hero {
     padding: 15px;
   }

@@ -100,6 +100,8 @@ export default function Menu() {
               animate="visible"
               variants={menuVariants}
             >
+           
+
               {menuItems.map(({ label, sectionId }) => (
                 <motion.a
                   key={sectionId}
@@ -111,6 +113,7 @@ export default function Menu() {
                 </motion.a>
               ))}
             </motion.div>
+
           </>
         )}
       </div>

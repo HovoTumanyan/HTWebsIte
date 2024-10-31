@@ -5,20 +5,18 @@
   z-index: 1000;
   width: 60px;
   height: 50px;
-  background: rgba(51, 51, 51, 0.637);
-  backdrop-filter: blur(2px);
-  /* mix-blend-mode:overlay; */
-  will-change: backdrop-filter;
+  background: rgba(32, 32, 32, 0.651); 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Тень для глубины */
   border-radius: var(--main-border-radius);
   display: flex;
   flex-direction: column;
   color: #ffffff;
-  transition: transform 0.4s ease, width 0.4s ease, height 0.4s ease;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 
 .menu.expanded {
-  background: rgba(51, 51, 51, 0.377);
-  backdrop-filter: blur(50px);
+  will-change: backdrop-filter;
+  backdrop-filter: saturate(180%) blur(20px);
   width: 400px;
   height: 300px;
 }
@@ -46,47 +44,13 @@
 }
 
 .menu-list svg {
-  vertical-align: bottom;
+  vertical-align: middle;
   transition: 0.4s all;
   font-size: 13px;
 }
 
 .menu-list a:hover > svg {
   transform: translateX(3px);
-}
-
-/* @keyframes menuAppear {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes closeAppear {
-  from {
-    opacity: 0;
-    transform: translate(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(5px);
-  }
-} */
-
-@media screen and (max-width: 768px) {
-  .menu {
-    right: 80px;
-    bottom: 15px;
-  }
-
-  .menu.expanded {
-    width: 230px;
-    height: 327px;
-  }
 }
 
 .close {
@@ -102,4 +66,16 @@
 
 .close svg:hover {
   transform: rotate(160deg);
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    right: 80px;
+    bottom: 15px;
+  }
+
+  .menu.expanded {
+    width: 230px;
+    height: 327px;
+  }
 }
