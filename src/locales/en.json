@@ -1,0 +1,28 @@
+{
+  "HeroWrapper": {
+    "hello": "Hello",
+    "aboutTheHero": "A web developer who loves turning ideas into reality through code. I have experience with <strong>HTML, CSS, JavaScript </strong> and <strong>React</strong>, and I’m expanding my expertise in back-end technologies like <strong>Node.js, Express,</strong> and <strong>MongoDB</strong> . I love exploring new tools and techniques to build efficient and engaging digital products. I’m always excited to learn new things and work with others to bring great projects to life.",
+    "letsCreate": "Let’s create something amazing together!"
+  },
+  
+  "HeroBorn": {
+    "born": "Born in -",
+    "country": "Armenia",
+    "liveIn": "Currently live in -",
+    "city": "Yerevan"
+  },
+
+  "Circle": {
+    "circleInfo": "Driven by a love for coding, I have taken the initiative to improve my knowledge in web development through online courses and personal projects. My focus is on building practical, real-world applications and growing as a developer every step of the way."
+  },
+
+  "Languages": {
+    "title": "Languages I speak"
+  },
+
+  "DevelopmentJourney": {
+    "title": "My Journey into Full-Stack Development",
+    "description1": "For the past three years, I have been intensively studying web development. Currently, I am focused on using <strong>Node.js</strong> along with technologies like <strong>Express</strong> and <strong>MongoDB</strong> to build back-end applications. Since mastering both front-end and back-end development is important to me, I aim to enhance my skills on both sides to become a well-rounded full-stack developer.",
+    "description2": "My passion for coding drives me to constantly learn and improve. I believe that the ability to solve real-world problems through technology is one of the most rewarding aspects of being a developer. Whether it’s creating sleek, responsive user interfaces or designing scalable server-side solutions, I am always ready for new challenges and opportunities to grow."
+  }
+}

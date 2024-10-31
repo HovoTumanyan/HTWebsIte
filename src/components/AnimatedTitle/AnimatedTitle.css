@@ -1,0 +1,7 @@
+.animated-title {
+  text-align: center;
+  border: 1px solid var(--main-border-color);
+  border-radius: var(--main-border-radius);
+  margin: 20px 20px;
+  font-weight: normal;
+}

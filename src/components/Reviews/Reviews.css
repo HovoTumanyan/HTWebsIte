@@ -1,0 +1,99 @@
+.reviews {
+  display: flex;
+  padding: 0 20px;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.reviews {
+  flex-direction: row;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .reviews {
+    flex-direction: column;
+  }
+
+  .reviews .about-reviews {
+    order: -1;
+    width: inherit;
+    padding: 20px;
+  }
+
+  .reviews .reviews-box {
+    width: inherit;
+    height: 650px;
+  }
+  .reviews .reviews-box p {
+    font-size: 20px;
+  }
+  .reviews .reviews-box pre {
+    text-align: right;
+    width: 100%;
+  }
+  .reviews .reviews-box .arrows {
+    left: 15px;
+  }
+}
+
+.reviews-box {
+  border: 1px solid var(--main-border-color);
+  width: 75%;
+  border-radius: var(--main-border-radius);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.reviews-box p {
+  font-style: italic;
+}
+
+.review-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.arrows {
+  display: flex;
+  margin-top: 20px;
+  gap: 15px;
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  font-style: italic;
+  gap: 10px;
+}
+
+.author-image {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  object-fit: contain;
+  border: 1px solid var(--main-border-color);
+  padding: 3px;
+}
+
+.about-reviews {
+  border: 1px solid var(--main-border-color);
+  padding: 50px;
+  border-radius: var(--main-border-radius);
+  width: 25%;
+}
+
+.about-reviews h1 {
+  display: contents;
+  padding-left: 30px;
+  font-weight: normal;
+}

@@ -1,0 +1,59 @@
+.whatsapp-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .whatsapp-button {
+    background-color: rgba(51, 51, 51, 0.377);
+    backdrop-filter: blur(10px);
+    color: #25d366;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    cursor: pointer;
+    margin-right: 5px;
+    z-index: 1;
+  }
+  
+  .chat-box {
+    position: absolute;
+    bottom: 60px;
+    right: 5px;
+    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--main-border-color);
+    border-radius: var(--main-border-radius);
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .chat-box a {
+    text-decoration: none;
+    color: #25d366;
+    font-weight: bold;
+  }
+
+  @media (min-width: 376px) and (max-width: 480px) {
+    .whatsapp-button {
+      width:60px;
+      height: 60px;
+      font-size:2.2rem;
+    
+    }
+  }
+
+  @media (min-width: 320px) and (max-width: 375px) {
+    .whatsapp-button {
+      width:40px;
+      height: 40px;
+      font-size:2.1rem;
+    }
+  }
