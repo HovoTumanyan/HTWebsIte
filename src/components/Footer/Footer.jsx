@@ -1,15 +1,18 @@
 import { motion } from 'framer-motion';
 import './Footer.css';
-export default function Footer({ setShowMenu }) {
+export default function Footer({ setShowMenu,setIsWhatsAppVisible }) {
   return (
     <motion.footer
       className="footer"
       onViewportEnter={() => setShowMenu(false)}
       onViewportLeave={() => setShowMenu(true)}
     >
-      <div className="current-year">
+      <motion.div className="current-year"
+      onViewportEnter={() => setIsWhatsAppVisible(false)}
+      onViewportLeave={() => setIsWhatsAppVisible(true)}
+      >
         <p>© 2024 Hovo Tumanyan</p>
-      </div>
+      </motion.div>
       <div className="links">
         <a href="https://www.facebook.com/TumanyanHovo" target="_blank" rel="noopener noreferrer">
           Facebook

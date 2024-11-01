@@ -1,5 +1,5 @@
-import { useState,useRef,useCallback } from 'react';
-import { motion,AnimatePresence } from 'framer-motion';
+import { useState, useRef, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
 import useOutsideClick from '../../customHooks/useOutsideClick';
 import './WhatsAppChat.css';
@@ -21,7 +21,7 @@ export default function WhatsAppChat() {
 
     visible: {
       opacity: 1,
-      
+
       transition: { delay: 0.5, duration: 0.5 },
     },
   };
@@ -54,7 +54,7 @@ export default function WhatsAppChat() {
         onClick={toggleChat}
         className="whatsapp-button"
       >
-        <FaWhatsapp  />
+        <FaWhatsapp />
       </motion.button>
     </div>
   );

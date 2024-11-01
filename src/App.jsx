@@ -27,9 +27,8 @@ import {
   Reviews,
   WorkingImage,
   Footer,
-  Menu
+  Menu,
 } from './components';
-
 
 function App() {
   const [currentTime, setCurrentTime] = useState('');
@@ -88,30 +87,6 @@ function App() {
     },
   };
 
-  const iconAnimation = {
-    hidden: {
-      x: 0,
-      rotate: 0,
-    },
-    visible: (custom) => ({
-      x: 6,
-      rotate: -16,
-      boxShadow: '5px 5px 15px white',
-      transition: {
-        delay: custom * 0.2,
-        duration: 0.3,
-        repeat: 1,
-        repeatType: 'reverse',
-      },
-    }),
-  };
-
-  const slideAnimation = {
-    hidden: { x: 200 },
-    visible: { x: 0, transition: { duration: 0.3, ease: 'easeInOut' } },
-    exit: { x: 100 },
-  };
-
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.style.setProperty('--after-border-color-light', '#ffff');
@@ -130,12 +105,7 @@ function App() {
           <ModeSwitchWrapper isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
 
           <div className="angry-grid">
-            <HeroWrapper
-              isDarkMode={isDarkMode}
-              textAnimation={textAnimation}
-              CV={CV}
-              iconAnimation={iconAnimation}
-            />
+            <HeroWrapper isDarkMode={isDarkMode} textAnimation={textAnimation} CV={CV} />
             <HeroImage
               isDarkMode={isDarkMode}
               textAnimation={textAnimation}
@@ -165,7 +135,11 @@ function App() {
               isDarkMode={isDarkMode}
             />
 
-            <DevelopmentJourney isDarkMode={isDarkMode} textAnimation={textAnimation} setShowMenu={setShowMenu}/>
+            <DevelopmentJourney
+              isDarkMode={isDarkMode}
+              textAnimation={textAnimation}
+              setShowMenu={setShowMenu}
+            />
 
             <InteractiveBlock
               textAnimation={textAnimation}
@@ -175,7 +149,7 @@ function App() {
             />
           </div>
 
-          <CareerTimeline slides={slides} isDarkMode={isDarkMode} slideAnimation={slideAnimation} />
+          <CareerTimeline slides={slides} isDarkMode={isDarkMode} />
           <AnimatedTitle title="Projects" isDarkMode={isDarkMode} textAnimation={textAnimation} />
           <Projects isDarkMode={isDarkMode} textAnimation={textAnimation} />
           <AnimatedTitle
@@ -192,8 +166,8 @@ function App() {
           {isWhatsAppVisible && <WhatsAppChat />}
           <AnimatedTitle title="Reviews" isDarkMode={isDarkMode} textAnimation={textAnimation} />
           <Reviews isDarkMode={isDarkMode} textAnimation={textAnimation} />
-           {showMenu && <Menu />} 
-          <Footer setShowMenu={setShowMenu}/>
+          {showMenu && <Menu />}
+          <Footer setShowMenu={setShowMenu} setIsWhatsAppVisible={setIsWhatsAppVisible} />
         </>
       )}
     </div>

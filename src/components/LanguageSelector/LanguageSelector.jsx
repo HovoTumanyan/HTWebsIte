@@ -1,7 +1,7 @@
+import { useState, useRef,useCallback } from 'react';
 import ReactCountryFlag from 'react-country-flag';
 import { FaChevronDown } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import { useState, useRef,useCallback } from 'react';
 import useOutsideClick from '../../customHooks/useOutsideClick';
 import './LanguageSelector.css';
 

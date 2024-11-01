@@ -97,12 +97,12 @@ body {
   z-index: 2;
 }
 
-.sticky-nav {
+/* .sticky-nav {
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 10;
-}
+} */
 
 .angry-grid {
   display: grid;

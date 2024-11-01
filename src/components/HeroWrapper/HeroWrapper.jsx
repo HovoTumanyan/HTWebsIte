@@ -3,8 +3,25 @@ import SocialIcons from '../SocialIcons/SocialIcons';
 import { useTranslation } from 'react-i18next';
 import { Trans } from 'react-i18next';
 
-const HeroWrapper = ({ isDarkMode, textAnimation, CV, iconAnimation }) => {
+const HeroWrapper = ({ isDarkMode, textAnimation, CV }) => {
   const { t } = useTranslation();
+  const iconAnimation = {
+    hidden: {
+      x: 0,
+      rotate: 0,
+    },
+    visible: (custom) => ({
+      x: 6,
+      rotate: -16,
+      boxShadow: '5px 5px 15px white',
+      transition: {
+        delay: custom * 0.2,
+        duration: 0.3,
+        repeat: 1,
+        repeatType: 'reverse',
+      },
+    }),
+  };
 
   return (
     <motion.div

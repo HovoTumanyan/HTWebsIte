@@ -2,7 +2,14 @@ import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 
-export default function CareerTimeline({ slides, isDarkMode, slideAnimation }) {
+export default function CareerTimeline({ slides, isDarkMode}) {
+
+  const slideAnimation = {
+    hidden: { x: 200 },
+    visible: { x: 0, transition: { duration: 0.3, ease: 'easeInOut' } },
+    exit: { x: 100 },
+  };
+
   return (
     <div className="career-timeline"
     id='shortway-section'>

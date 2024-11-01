@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export default function HeroImage({ img, Developer, textAnimation, isDarkMode }) {
+export default function HeroImage({ Developer, textAnimation, isDarkMode }) {
   return (
     <div className="hero-img">
       <motion.div className="hero-svg ">

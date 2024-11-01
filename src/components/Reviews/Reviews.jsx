@@ -1,10 +1,10 @@
-import { RiStarSmileFill } from 'react-icons/ri';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { GorAReview,KarenTReview,DianaTReview,GorMReview } from '../../assets';
-
+import { RiStarSmileFill } from 'react-icons/ri';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { reviews } from '../../data';
 import './Reviews.css';
+
 
 export default function Reviews({ isDarkMode, textAnimation }) {
 
@@ -12,50 +12,7 @@ export default function Reviews({ isDarkMode, textAnimation }) {
   const [direction, setDirection] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); 
 
-  const reviews = [
-    {
-      description:
-        'Hovo is a goal-oriented person who achieves his goals. He is responsible and very smart in his field. He will be able to turn your dreams into reality.',
-      name: 'Gor A.',
-      proffesia: ' Full-Stack Developer',
-      img: GorAReview,
-    },{
-      description:
-        'I had the opportunity to work with this man, and I want to say that he works great in a team. There are no unsolved problems for him, and he does it with love, which, to me, is the most important quality of a good programmer.',
-      name: 'Karen T.',
-      proffesia: ' Front-End Developer',
-      img: KarenTReview,
-    },
-    {
-      description:
-        'I can say that he is one of the most responsible and talented front-end developers I have worked with. He not only solves tasks quickly but also offers truly high-quality solutions. He always keeps up with current technologies and approaches, which makes our project look modern and function flawlessly. As a full-stack developer, I appreciate that I can rely on the front end—everything is done thoroughly and with attention to detail.',
-      name: 'Gor M.',
-      proffesia: ' Full-Stack Developer',
-      img: GorMReview,
-    },{
-      description:
-        'I had a great experience working with Hovo. He was highly responsive and always ensured that the UI/UX was implemented accurately. His attention to detail, especially in maintaining the design system, was impressive. He was proactive in suggesting solutions for improving user interactions and resolving technical constraints without compromising the design vision. Looking forward to collaborating again!',
-      name: 'Diana T.',
-      proffesia: ' UI/UX Designer',
-      img: DianaTReview,
-    },
-    {
-      description:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis tempora architecto amet molestias quisquam voluptas nam reprehenderit fuga ad. Non neque sint alias, magnam dignissimos magni, facilis voluptas hic, exercitationem aut officia ex eum voluptatem!',
-      name: 'Michael B.',
-      proffesia: '',
-      img: 'https://via.placeholder.com/50',
-    },{
-      description:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis tempora architecto amet molestias quisquam voluptas nam reprehenderit fuga ad. Non neque sint alias, magnam dignissimos magni, facilis voluptas hic, exercitationem aut officia ex eum voluptatem!',
-      name: 'Anna L.',
-      proffesia: '',
-      img: 'https://via.placeholder.com/50',
-    },
-  ];
   
-
-
   const handlePrev = () => {
     setDirection(-1);
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));

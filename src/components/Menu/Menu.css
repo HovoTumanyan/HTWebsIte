@@ -1,7 +1,7 @@
 .menu {
   position: fixed;
-  bottom: 15px;
-  right: 90px;
+  bottom: 20px;
+  right: 20px;
   z-index: 1000;
   width: 60px;
   height: 50px;
@@ -70,8 +70,8 @@
 
 @media screen and (max-width: 768px) {
   .menu {
-    right: 80px;
-    bottom: 15px;
+    right: 20px;
+    bottom: 20px;
   }
 
   .menu.expanded {

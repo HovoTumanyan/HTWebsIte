@@ -18,7 +18,7 @@ const useOutsideClick = (ref, callback, isOpen) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isOpen, memoizedCallback]); // Заменяем callback на memoizedCallback
+  }, [isOpen, memoizedCallback]); 
 };
 
 export default useOutsideClick;

@@ -1,6 +1,5 @@
 import BackGroundSwitch from '../ant-design/BackGroundSwitch';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
-import Menu from '../Menu/Menu';
 
 export default function ModeSwitchWrapper({ isDarkMode, setIsDarkMode }) {
   return (

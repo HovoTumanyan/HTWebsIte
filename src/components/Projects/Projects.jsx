@@ -1,8 +1,8 @@
-import { projectData } from '../../data';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MoreOutlined, EyeOutlined } from '@ant-design/icons';
 import { Card, Row, Col } from 'antd';
-import { useState } from 'react';
+import { projectData } from '../../data';
 
 export default function Projects({ isDarkMode, textAnimation }) {
   const { Meta } = Card;

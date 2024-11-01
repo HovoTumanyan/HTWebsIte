@@ -1,8 +1,9 @@
 import { useState, useRef, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
-import { motion, AnimatePresence } from 'framer-motion';
 import useOutsideClick from '../../customHooks/useOutsideClick';
+import { menuItems } from '../../data';
 import './Menu.css';
 
 export default function Menu() {
@@ -23,15 +24,7 @@ export default function Menu() {
     }
   }, []);
 
-  const menuItems = [
-    { label: 'Hello', sectionId: 'hello-section' },
-    { label: 'Languages I speak', sectionId: 'languages-i-speak-section' },
-    { label: 'Full-Stack Development', sectionId: 'fullstack-section' },
-    { label: 'My short way', sectionId: 'shortway-section' },
-    { label: 'Projects', sectionId: 'projects-section' },
-    { label: 'Working with me', sectionId: 'working-with-me-section' },
-    { label: 'Reviews', sectionId: 'reviews-section' },
-  ];
+ 
 
   const menuVariants = {
     hidden: { visibility: 'hidden', x:0 },
