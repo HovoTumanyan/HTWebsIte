@@ -58,19 +58,6 @@ export default function SocialIcons({ CV, isDarkMode, iconAnimation }) {
       >
         <FaLinkedin size={30} style={{ color: !isDarkMode && 'black' }} />
       </motion.a>
-
-      {/* <motion.a
-        href="https://wa.me/+37433303354?text=Hello, I want to get in touch with you!"
-        target="_blank"
-        rel="noopener noreferrer"
-        custom={5}
-        initial="hidden"
-        whileInView="visible"
-        variants={iconAnimation}
-        viewport={{ amount: 0.9, once: true }}
-      >
-        <FaWhatsapp size={30} style={{ color: !isDarkMode && 'black' }} />
-      </motion.a> */}
     </div>
   );
 }
