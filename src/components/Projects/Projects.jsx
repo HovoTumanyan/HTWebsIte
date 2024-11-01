@@ -38,7 +38,7 @@ export default function Projects({ isDarkMode, textAnimation }) {
                   expandedProject === project.id ? 'project-expanded' : ''
                 }`}
               >
-                {/* Обертываем Card в motion.div */}
+                
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
