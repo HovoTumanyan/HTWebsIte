@@ -4,7 +4,7 @@
   right: 20px;
   z-index: 1000;
   width: 60px;
-  height: 50px;
+  height: 45px;
   background: rgba(32, 32, 32, 0.651); 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Тень для глубины */
   border-radius: var(--main-border-radius);
@@ -29,7 +29,7 @@
 }
 
 .menu-button {
-  margin: 5px 0px;
+  margin: 7px 0px;
   font-weight: bold;
   display: flex;
   justify-content: center;
