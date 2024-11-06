@@ -3,6 +3,8 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import { useScroll } from 'framer-motion';
 import { slides, frontendSkills, backendSkills } from './data';
+import { useTranslation } from 'react-i18next';
+
 import './App.css';
 
 import { Developer, circleDrk, circleLgt, animationData, CV } from './assets';
@@ -43,6 +45,8 @@ function App() {
 
   const { scrollYProgress } = useScroll();
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const { t } = useTranslation();
+
 
   const handleScrollChange = useCallback((latest) => {
     setProgress(latest);
@@ -150,10 +154,10 @@ function App() {
           </div>
 
           <CareerTimeline slides={slides} isDarkMode={isDarkMode} />
-          <AnimatedTitle title="Projects" isDarkMode={isDarkMode} textAnimation={textAnimation} />
+          <AnimatedTitle title={t('AnimatedTitle.title1')} isDarkMode={isDarkMode} textAnimation={textAnimation} />
           <Projects isDarkMode={isDarkMode} textAnimation={textAnimation} />
           <AnimatedTitle
-            title="Working with Me"
+            title={t('AnimatedTitle.title2')}
             isDarkMode={isDarkMode}
             textAnimation={textAnimation}
           />
@@ -164,7 +168,7 @@ function App() {
           />
           <WorkingImage />
           {isWhatsAppVisible && <WhatsAppChat />}
-          <AnimatedTitle title="Reviews" isDarkMode={isDarkMode} textAnimation={textAnimation} />
+          <AnimatedTitle title={t('AnimatedTitle.title3')} isDarkMode={isDarkMode} textAnimation={textAnimation} />
           <Reviews isDarkMode={isDarkMode} textAnimation={textAnimation} />
           {showMenu && <Menu />}
           <Footer setShowMenu={setShowMenu} setIsWhatsAppVisible={setIsWhatsAppVisible} />

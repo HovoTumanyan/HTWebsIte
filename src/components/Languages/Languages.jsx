@@ -11,7 +11,9 @@ export default function Languages({
   textAnimation,
   isDarkMode,
 }) {
+  
   const { t } = useTranslation();
+  const languages = t("Languages.humanend");
 
   const listAnimation = {
     hidden: { opacity: 0, height: 0, transition: { duration: 0.3 } },
@@ -40,7 +42,7 @@ export default function Languages({
       viewport={{ amount: 0.1, once: true }}
       variants={textAnimation}
       className={`languages ${isDarkMode ? 'darkMode' : 'lightMode'}`}
-      id='languages-i-speak-section'
+      id="languages-i-speak-section"
     >
       <div className="about-languages">
         <motion.h1>{t('Languages.title')}</motion.h1>
@@ -89,9 +91,11 @@ export default function Languages({
             variants={listAnimation}
             viewport={{ amount: 0.2, once: true }}
           >
-            <motion.li variants={listItemAnimation}>Armenian </motion.li>
-            <motion.li variants={listItemAnimation}>English </motion.li>
-            <motion.li variants={listItemAnimation}>Russian </motion.li>
+            {languages.map((language, index) => (
+              <motion.li key={index} variants={listItemAnimation}>
+                {language}
+              </motion.li>
+            ))}
           </motion.ul>
         </div>
 
