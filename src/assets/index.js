@@ -14,4 +14,5 @@ export { default as BestPractices } from './BestPractices.webp';
 export { default as PersonalizedApproach } from './PersonalizedApproach.webp';
 export { default as DianaTReview } from './Diana.T_Review.jpeg';
 export { default as GorMReview } from './Gor.M_Review.jpeg';
+export { default as MelPReview } from './Mel.P_Review.jpg';
 

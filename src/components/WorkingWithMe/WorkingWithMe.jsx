@@ -1,9 +1,20 @@
 import { motion } from 'framer-motion';
 import { Card, Row, Col } from 'antd';
-import { steps } from '../../data';
+import { useTranslation } from 'react-i18next';
+import { getSteps } from '../../data';
+import { useContext } from 'react';
+import { ThemeContext } from '../AppProvider/ThemeProvider';
+import { AnimationContext } from '../AppProvider/MainAnimationProvider';
 import './WorkingWithMe.css';
 
-export default function WorkingWithMe({ isDarkMode, textAnimation, setIsWhatsAppVisible }) {
+
+export default function WorkingWithMe({ setIsWhatsAppVisible }) {
+  const {isDarkMode} = useContext(ThemeContext)
+  const { mainAnimation } = useContext(AnimationContext)
+
+  
+  const { t } = useTranslation();
+  const steps = getSteps(t); 
   return (
     <motion.div
       className="working-with-me"
@@ -16,7 +27,7 @@ export default function WorkingWithMe({ isDarkMode, textAnimation, setIsWhatsApp
             <motion.div
               initial="hidden"
               whileInView="visible"
-              variants={textAnimation}
+              variants={mainAnimation}
               viewport={{ once: true }}
             >
               <Card className={`custom-card ${isDarkMode ? 'darkMode' : 'lightMode'}`}>

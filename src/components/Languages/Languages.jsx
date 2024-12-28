@@ -1,16 +1,23 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { useContext } from 'react';
+import { ThemeContext } from '../AppProvider/ThemeProvider';
+import { AnimationContext } from '../AppProvider/MainAnimationProvider';
+import { LanguagesContext } from '../AppProvider/LanguagesProvider';
+
 
 export default function Languages({
-  frontendSkills,
-  backendSkills,
-  isFrontendOpen,
-  isBackendOpen,
-  setIsFrontendOpen,
-  setIsBackendOpen,
-  textAnimation,
-  isDarkMode,
+  
 }) {
+  const {isDarkMode} = useContext(ThemeContext)
+  const { mainAnimation } = useContext(AnimationContext)
+  const { frontendSkills,
+    backendSkills,
+    isFrontendOpen,
+    isBackendOpen,
+    setIsFrontendOpen,
+    setIsBackendOpen, } = useContext(LanguagesContext)
+
   
   const { t } = useTranslation();
   const languages = t("Languages.humanend");
@@ -40,7 +47,7 @@ export default function Languages({
       initial="hidden"
       whileInView="visible"
       viewport={{ amount: 0.1, once: true }}
-      variants={textAnimation}
+      variants={ mainAnimation } 
       className={`languages ${isDarkMode ? 'darkMode' : 'lightMode'}`}
       id="languages-i-speak-section"
     >

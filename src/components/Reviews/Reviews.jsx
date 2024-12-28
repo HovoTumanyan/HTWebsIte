@@ -1,12 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RiStarSmileFill } from 'react-icons/ri';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { reviews } from '../../data';
+import { ThemeContext } from '../AppProvider/ThemeProvider';
+import { AnimationContext } from '../AppProvider/MainAnimationProvider';
 import './Reviews.css';
 
 
-export default function Reviews({ isDarkMode, textAnimation }) {
+export default function Reviews({ textAnimation }) {
+  
+  const {isDarkMode} = useContext(ThemeContext)
+  const { mainAnimation } = useContext(AnimationContext)
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -59,7 +64,7 @@ export default function Reviews({ isDarkMode, textAnimation }) {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        variants={textAnimation}
+        variants={mainAnimation}
         viewport={{ once: true }}
         className={`reviews-box ${isDarkMode ? 'darkMode' : 'lightMode'}`}
       >
@@ -95,7 +100,7 @@ export default function Reviews({ isDarkMode, textAnimation }) {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        variants={textAnimation}
+        variants={mainAnimation}
         viewport={{ once: true }}
         className={`about-reviews ${isDarkMode ? 'darkMode' : 'lightMode'}`}
       >

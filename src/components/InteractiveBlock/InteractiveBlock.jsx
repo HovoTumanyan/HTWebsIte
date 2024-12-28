@@ -1,15 +1,18 @@
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import { motion } from "framer-motion";
+import { useContext } from "react";
+import { useTranslation } from "react-i18next";
+import { AnimationContext } from "../AppProvider/MainAnimationProvider";
 
-export default function InteractiveBlok({ textAnimation, text, setText }) {
+export default function InteractiveBlok({ text, setText }) {
+  const { mainAnimation } = useContext(AnimationContext);
   const { t } = useTranslation();
 
   const handleMouseEnter = () => {
-    setText('ENCOURAGER. FATHER. HUSBAND. BROTHER. FRIEND.');
+    setText("ENCOURAGER. FATHER. HUSBAND. BROTHER. FRIEND.");
   };
-  
+
   const handleMouseLeave = () => {
-    setText('DREAMER.  RESEARCHER.  REALIZER. PARTNER. TEAM PLAYER.');
+    setText("DREAMER.  RESEARCHER.  REALIZER. PARTNER. TEAM PLAYER.");
   };
 
   return (
@@ -19,7 +22,7 @@ export default function InteractiveBlok({ textAnimation, text, setText }) {
       onMouseLeave={handleMouseLeave}
       initial="hidden"
       whileInView="visible"
-      variants={textAnimation}
+      variants={mainAnimation}
       viewport={{ once: true }}
     >
       <motion.h3

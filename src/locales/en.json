@@ -30,5 +30,16 @@
     "title1":"Projects",
     "title2":"Working with Me",
     "title3":"Reviews"
+  },
+  "WorkingWithMe": {
+  "title1":"1. Modern & Responsive Design",
+  "description1":"By ordering a project from me, you will receive a modern, responsive, and unique website that displays perfectly on any device.",
+  "title2":"2. Personalized Approach",
+  "description2":"I develop websites tailored to your needs and goals, creating a solution that fully matches your business.",
+  "title3":"3. Quality & Best Practices",
+  "description3":"I ensure high quality by using advanced technologies and professional approaches to achieve the best results.",
+  "title4":"4. Support & Development",
+  "description4":"Your project will include ongoing support and options for further development to keep the website current and effective."
+
   }
 }

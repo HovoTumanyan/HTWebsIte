@@ -2,8 +2,15 @@ import { motion } from 'framer-motion';
 import SocialIcons from '../SocialIcons/SocialIcons';
 import { useTranslation } from 'react-i18next';
 import { Trans } from 'react-i18next';
+import { useContext } from 'react';
+import { ThemeContext } from '../AppProvider/ThemeProvider';
+import { AnimationContext } from '../AppProvider/MainAnimationProvider';
 
-const HeroWrapper = ({ isDarkMode, textAnimation, CV }) => {
+const HeroWrapper = ({  textAnimation, CV }) => {
+  const {isDarkMode} = useContext(ThemeContext)
+  const { mainAnimation } = useContext(AnimationContext)
+
+  
   const { t } = useTranslation();
   const iconAnimation = {
     hidden: {
@@ -27,7 +34,7 @@ const HeroWrapper = ({ isDarkMode, textAnimation, CV }) => {
     <motion.div
       initial="hidden"
       whileInView="visible"
-      variants={textAnimation}
+      variants={mainAnimation}
       className={`hero-wrapper ${isDarkMode ? 'darkMode' : 'lightMode'}`}
       id='hello-section'
       viewport={{ once: true }}
@@ -36,7 +43,7 @@ const HeroWrapper = ({ isDarkMode, textAnimation, CV }) => {
         <motion.h1
           initial="hidden"
           whileInView="visible"
-          variants={textAnimation}
+          variants={mainAnimation}
           viewport={{ amount: 0.1 }}
         >
           {t("HeroWrapper.hello")}
@@ -47,7 +54,7 @@ const HeroWrapper = ({ isDarkMode, textAnimation, CV }) => {
         <motion.h1
           initial="hidden"
           whileInView="visible"
-          variants={textAnimation}
+          variants={mainAnimation}
           viewport={{ amount: 0.1 }}
         >
           Hovo Tumanyan
@@ -55,7 +62,7 @@ const HeroWrapper = ({ isDarkMode, textAnimation, CV }) => {
         <motion.p
           initial="hidden"
           whileInView="visible"
-          variants={textAnimation}
+          variants={mainAnimation}
           viewport={{ once: false }}
 
         >

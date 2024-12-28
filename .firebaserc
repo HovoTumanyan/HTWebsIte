@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "htflow-45517"
-  }
+    "default": "htflow-45517",
+    "myweb": "htflow-45517"
+  },
+  "targets": {},
+  "etags": {}
 }

@@ -3,6 +3,7 @@ import ReactCountryFlag from 'react-country-flag';
 import { FaChevronDown } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import useOutsideClick from '../../customHooks/useOutsideClick';
+
 import './LanguageSelector.css';
 
 const LanguageSelector = () => {
@@ -28,7 +29,8 @@ const LanguageSelector = () => {
   return (
     <div className="language-selector" ref={selectorRef}>
       <div className="language-selector__trigger" onClick={() => setIsOpen(!isOpen)}>
-        <ReactCountryFlag countryCode={country ? 'RU' : 'GB'} className="language-selector__flag" />
+        <ReactCountryFlag countryCode={country ? 'RU' : 'GB'} className="language-selector__flag"  svg/>
+        
         <FaChevronDown className={`language-selector__icon ${isOpen ? 'open' : ''}`} />
       </div>
 
@@ -37,6 +39,7 @@ const LanguageSelector = () => {
           <ReactCountryFlag
             countryCode={country ? 'GB' : 'RU'}
             className="language-selector__flag"
+            svg
           />
         </div>
       )}

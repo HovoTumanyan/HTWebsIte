@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { motion } from 'framer-motion';
 import { MoreOutlined, EyeOutlined } from '@ant-design/icons';
 import { Card, Row, Col } from 'antd';
 import { projectData } from '../../data';
+import { ThemeContext } from '../AppProvider/ThemeProvider';
+import { AnimationContext } from '../AppProvider/MainAnimationProvider';
 
-export default function Projects({ isDarkMode, textAnimation }) {
+
+export default function Projects() {
   const { Meta } = Card;
+  
+  const {isDarkMode} = useContext(ThemeContext)
+  const { mainAnimation } = useContext(AnimationContext)
+
   const [expandedProject, setExpandedProject] = useState(null);
 
   const handleProjectClick = (id) => {
@@ -25,7 +32,7 @@ export default function Projects({ isDarkMode, textAnimation }) {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        variants={textAnimation}
+        variants={mainAnimation}
         viewport={{ once: true }}
         className={`projects ${isDarkMode ? 'darkMode' : 'lightMode'}`}
         id='projects-section'
@@ -42,7 +49,7 @@ export default function Projects({ isDarkMode, textAnimation }) {
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
-                  variants={textAnimation}
+                  variants={mainAnimation}
                   viewport={{ once: true }}
                 >
                   <Card

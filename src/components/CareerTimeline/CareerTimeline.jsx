@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FaLongArrowAltRight } from 'react-icons/fa';
+import { useContext } from 'react';
+import { ThemeContext } from '../AppProvider/ThemeProvider';
 
-export default function CareerTimeline({ slides, isDarkMode}) {
+export default function CareerTimeline({ slides }) {
+
+  const {isDarkMode} = useContext(ThemeContext)
 
   const slideAnimation = {
     hidden: { x: 200 },
