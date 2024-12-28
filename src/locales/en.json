@@ -4,7 +4,7 @@
     "aboutTheHero": "A web developer who loves turning ideas into reality through code. I have experience with <strong>HTML, CSS, JavaScript </strong> and <strong>React</strong>, and I’m expanding my expertise in back-end technologies like <strong>Node.js, Express,</strong> and <strong>MongoDB</strong> . I love exploring new tools and techniques to build efficient and engaging digital products. I’m always excited to learn new things and work with others to bring great projects to life.",
     "letsCreate": "Let’s create something amazing together!"
   },
-  
+
   "HeroBorn": {
     "born": "Born in -",
     "country": "Armenia",
@@ -18,7 +18,7 @@
 
   "Languages": {
     "title": "Languages I speak",
-    "humanend":["Armenian","English","Russian"]
+    "humanend": ["Armenian", "English", "Russian"]
   },
 
   "DevelopmentJourney": {
@@ -26,20 +26,19 @@
     "description1": "For the past three years, I have been intensively studying web development. Currently, I am focused on using <strong>Node.js</strong> along with technologies like <strong>Express</strong> and <strong>MongoDB</strong> to build back-end applications. Since mastering both front-end and back-end development is important to me, I aim to enhance my skills on both sides to become a well-rounded full-stack developer.",
     "description2": "My passion for coding drives me to constantly learn and improve. I believe that the ability to solve real-world problems through technology is one of the most rewarding aspects of being a developer. Whether it’s creating sleek, responsive user interfaces or designing scalable server-side solutions, I am always ready for new challenges and opportunities to grow."
   },
-  "AnimatedTitle":{
-    "title1":"Projects",
-    "title2":"Working with Me",
-    "title3":"Reviews"
+  "AnimatedTitle": {
+    "title1": "Projects",
+    "title2": "Working with Me",
+    "title3": "Reviews"
   },
   "WorkingWithMe": {
-  "title1":"1. Modern & Responsive Design",
-  "description1":"By ordering a project from me, you will receive a modern, responsive, and unique website that displays perfectly on any device.",
-  "title2":"2. Personalized Approach",
-  "description2":"I develop websites tailored to your needs and goals, creating a solution that fully matches your business.",
-  "title3":"3. Quality & Best Practices",
-  "description3":"I ensure high quality by using advanced technologies and professional approaches to achieve the best results.",
-  "title4":"4. Support & Development",
-  "description4":"Your project will include ongoing support and options for further development to keep the website current and effective."
-
+    "title1": "1. Modern & Responsive Design",
+    "description1": "By ordering a project from me, you will receive a modern, responsive, and unique website that displays perfectly on any device.",
+    "title2": "2. Personalized Approach",
+    "description2": "I develop websites tailored to your needs and goals, creating a solution that fully matches your business.",
+    "title3": "3. Quality & Best Practices",
+    "description3": "I ensure high quality by using advanced technologies and professional approaches to achieve the best results.",
+    "title4": "4. Support & Development",
+    "description4": "Your project will include ongoing support and options for further development to keep the website current and effective."
   }
 }

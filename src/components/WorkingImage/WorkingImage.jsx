@@ -1,6 +1,6 @@
-import { Developer } from '../../assets';
-import { motion } from 'framer-motion';
-import './WorkingImage.css';
+import { Developer } from "../../assets";
+import { motion } from "framer-motion";
+import "./WorkingImage.css";
 
 export default function WorkingImage() {
   const imagesAnimation = {

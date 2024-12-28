@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useContext } from "react";
 import "swiper/css/free-mode";
 import { useScroll } from "framer-motion";
-import { slides, frontendSkills, backendSkills } from "./data";
+import { slides } from "./data";
 import { useTranslation } from "react-i18next";
 
 import "swiper/css";

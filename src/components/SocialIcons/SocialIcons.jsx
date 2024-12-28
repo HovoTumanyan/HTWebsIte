@@ -1,9 +1,8 @@
-import { motion } from 'framer-motion';
-import { FaFileDownload, FaEye, FaLinkedin } from 'react-icons/fa';
-import { SiGmail } from 'react-icons/si';
+import { motion } from "framer-motion";
+import { FaFileDownload, FaEye, FaLinkedin } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 export default function SocialIcons({ CV, isDarkMode, iconAnimation }) {
-
   return (
     <div className="social-icons">
       <motion.a
@@ -17,7 +16,7 @@ export default function SocialIcons({ CV, isDarkMode, iconAnimation }) {
         variants={iconAnimation}
         viewport={{ amount: 0.9, once: true }}
       >
-        <FaEye size={30} style={{ color: !isDarkMode && 'black' }} />
+        <FaEye size={30} style={{ color: !isDarkMode && "black" }} />
       </motion.a>
 
       <motion.a
@@ -30,7 +29,7 @@ export default function SocialIcons({ CV, isDarkMode, iconAnimation }) {
         variants={iconAnimation}
         viewport={{ amount: 0.9, once: true }}
       >
-        <FaFileDownload size={30} style={{ color: !isDarkMode && 'black' }} />
+        <FaFileDownload size={30} style={{ color: !isDarkMode && "black" }} />
       </motion.a>
 
       <motion.a
@@ -43,7 +42,7 @@ export default function SocialIcons({ CV, isDarkMode, iconAnimation }) {
         variants={iconAnimation}
         viewport={{ amount: 0.9, once: true }}
       >
-        <SiGmail size={30} style={{ color: !isDarkMode && 'black' }} />
+        <SiGmail size={30} style={{ color: !isDarkMode && "black" }} />
       </motion.a>
 
       <motion.a
@@ -56,7 +55,7 @@ export default function SocialIcons({ CV, isDarkMode, iconAnimation }) {
         variants={iconAnimation}
         viewport={{ amount: 0.9, once: true }}
       >
-        <FaLinkedin size={30} style={{ color: !isDarkMode && 'black' }} />
+        <FaLinkedin size={30} style={{ color: !isDarkMode && "black" }} />
       </motion.a>
     </div>
   );

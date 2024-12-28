@@ -6,13 +6,11 @@ import ThemeProvider from "./ThemeProvider";
 const AppProvider = ({ children }) => {
   return (
     <ThemeProvider>
-    <MenuProvider>
-      <MainAnimationProvider>
-        <LanguagesProvider>
-          {children}
-        </LanguagesProvider>
-      </MainAnimationProvider>
-    </MenuProvider>
+      <MenuProvider>
+        <MainAnimationProvider>
+          <LanguagesProvider>{children}</LanguagesProvider>
+        </MainAnimationProvider>
+      </MenuProvider>
     </ThemeProvider>
   );
 };

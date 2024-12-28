@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import './LoadingAnimation.css';
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import "./LoadingAnimation.css";
 
 export default function LoadingAnimation({ setIsLoading }) {
-  const letters = '{HT: () => Website}'.split('');
+  const letters = "{HT: () => Website}".split("");
 
   const letterAnimation = {
     hidden: { opacity: 0, x: -70 },
@@ -13,7 +13,7 @@ export default function LoadingAnimation({ setIsLoading }) {
       transition: {
         delay: i * 0.1,
         duration: 0.5,
-        ease: 'easeInOut',
+        ease: "easeInOut",
       },
     }),
   };
@@ -21,10 +21,10 @@ export default function LoadingAnimation({ setIsLoading }) {
   const underline = {
     hidden: { width: 0 },
     visible: {
-      width: '100%',
+      width: "100%",
       transition: {
         duration: letters.length * 0.1 + 0.7,
-        ease: 'easeInOut',
+        ease: "easeInOut",
       },
     },
   };
@@ -52,7 +52,12 @@ export default function LoadingAnimation({ setIsLoading }) {
             {letter}
           </motion.span>
         ))}
-        <motion.div className="underline" initial="hidden" animate="visible" variants={underline} />
+        <motion.div
+          className="underline"
+          initial="hidden"
+          animate="visible"
+          variants={underline}
+        />
       </div>
     </div>
   );

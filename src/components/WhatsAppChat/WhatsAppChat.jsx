@@ -1,11 +1,17 @@
-import { useState, useRef, useCallback } from 'react';
-import { motion } from 'framer-motion';
-import { FaWhatsapp } from 'react-icons/fa';
-import useOutsideClick from '../../customHooks/useOutsideClick';
-import './WhatsAppChat.css';
+import { useState, useRef, useCallback } from "react";
+import { motion } from "framer-motion";
+import { FaWhatsapp } from "react-icons/fa";
+import useOutsideClick from "../../customHooks/useOutsideClick";
+import "./WhatsAppChat.css";
 
 export default function WhatsAppChat() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const phoneNumber = import.meta.env.VITE_APP_PHONE_NUMBER;
+  const defaultMessage = import.meta.env.VITE_APP_DEFAULT_MESSAGE;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    defaultMessage
+  )}`;
 
   const selectorRef = useRef(null);
   const handleCloseMenu = useCallback(() => {
@@ -21,13 +27,9 @@ export default function WhatsAppChat() {
 
     visible: {
       opacity: 1,
-
       transition: { delay: 0.5, duration: 0.5 },
     },
   };
-
-  const phoneNumber = '+37433303354';
-  const defaultMessage = 'Hello! I would like to know more about your services.';
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -37,11 +39,7 @@ export default function WhatsAppChat() {
     <div className="whatsapp-chat" ref={selectorRef}>
       {isOpen && (
         <div className="chat-box">
-          <a
-            href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
             Message on WhatsApp
           </a>
         </div>

@@ -61,7 +61,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   /* font-family: Manrope, sans-serif ; */
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   /* font-family: "Kanit", sans-serif; */
   -webkit-tap-highlight-color: transparent;
 }
@@ -365,7 +365,7 @@ li {
 }
 
 .career-line::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -522,8 +522,6 @@ li {
   color: white;
 }
 
-
-
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .container {
     max-width: 100%;
@@ -537,7 +535,7 @@ li {
   .hero-wrapper {
     order: -1;
   }
-  
+
   .hero-img {
     order: -1;
   }

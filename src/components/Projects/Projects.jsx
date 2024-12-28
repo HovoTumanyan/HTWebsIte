@@ -1,29 +1,26 @@
-import { useState, useContext } from 'react';
-import { motion } from 'framer-motion';
-import { MoreOutlined, EyeOutlined } from '@ant-design/icons';
-import { Card, Row, Col } from 'antd';
-import { projectData } from '../../data';
-import { ThemeContext } from '../AppProvider/ThemeProvider';
-import { AnimationContext } from '../AppProvider/MainAnimationProvider';
-
+import { useState, useContext } from "react";
+import { motion } from "framer-motion";
+import { MoreOutlined, EyeOutlined } from "@ant-design/icons";
+import { Card, Row, Col } from "antd";
+import { projectData } from "../../data";
+import { ThemeContext } from "../AppProvider/ThemeProvider";
+import { AnimationContext } from "../AppProvider/MainAnimationProvider";
 
 export default function Projects() {
   const { Meta } = Card;
-  
-  const {isDarkMode} = useContext(ThemeContext)
-  const { mainAnimation } = useContext(AnimationContext)
 
+  const { isDarkMode } = useContext(ThemeContext);
+  const { mainAnimation } = useContext(AnimationContext);
   const [expandedProject, setExpandedProject] = useState(null);
-
   const handleProjectClick = (id) => {
     setExpandedProject(expandedProject === id ? null : id);
   };
 
   const handleIconClick = (url) => {
-    if (url && url !== '#!') {
-      window.open(url, '_blank');
+    if (url && url !== "#!") {
+      window.open(url, "_blank");
     } else {
-      console.log('No valid URL available for this project');
+      console.log("No valid URL available for this project");
     }
   };
 
@@ -34,18 +31,17 @@ export default function Projects() {
         whileInView="visible"
         variants={mainAnimation}
         viewport={{ once: true }}
-        className={`projects ${isDarkMode ? 'darkMode' : 'lightMode'}`}
-        id='projects-section'
+        className={`projects ${isDarkMode ? "darkMode" : "lightMode"}`}
+        id="projects-section"
       >
         <Row gutter={[16, 16]}>
           {projectData.map((project, index) => (
             <Col key={project.id} xs={24} sm={12} md={8}>
               <div
                 className={`project-card ${
-                  expandedProject === project.id ? 'project-expanded' : ''
+                  expandedProject === project.id ? "project-expanded" : ""
                 }`}
               >
-                
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
@@ -53,33 +49,45 @@ export default function Projects() {
                   viewport={{ once: true }}
                 >
                   <Card
-                    style={{ backgroundColor: '#242424' }}
+                    style={{ backgroundColor: "#242424" }}
                     className="custom-class"
                     cover={<img alt={project.title} src={project.imageUrl} />}
                     actions={[
                       <EyeOutlined
                         title="View project"
                         style={{
-                          fontSize: '20px',
-                          color: 'white',
-                          cursor: project.url && project.url !== '#!' ? 'pointer' : 'not-allowed',
-                          opacity: project.url && project.url !== '#!' ? 1 : 0.5,
-                          pointerEvents: project.url && project.url !== '#!' ? 'auto' : 'none',
+                          fontSize: "20px",
+                          color: "white",
+                          cursor:
+                            project.url && project.url !== "#!"
+                              ? "pointer"
+                              : "not-allowed",
+                          opacity:
+                            project.url && project.url !== "#!" ? 1 : 0.5,
+                          pointerEvents:
+                            project.url && project.url !== "#!"
+                              ? "auto"
+                              : "none",
                         }}
                         onClick={() => handleIconClick(project.url)}
                       />,
                       <MoreOutlined
                         title="View details"
                         style={{
-                          fontSize: '20px',
-                          color: 'white',
+                          fontSize: "20px",
+                          color: "white",
                           cursor:
-                            project.description && project.description !== ''
-                              ? 'pointer'
-                              : 'not-allowed',
-                          opacity: project.description && project.description !== '' ? 1 : 0.5,
+                            project.description && project.description !== ""
+                              ? "pointer"
+                              : "not-allowed",
+                          opacity:
+                            project.description && project.description !== ""
+                              ? 1
+                              : 0.5,
                           pointerEvents:
-                            project.description && project.description !== '' ? 'auto' : 'none',
+                            project.description && project.description !== ""
+                              ? "auto"
+                              : "none",
                         }}
                         onClick={() => handleProjectClick(project.id)}
                       />,
@@ -89,7 +97,10 @@ export default function Projects() {
                   </Card>
                 </motion.div>
 
-                <div className="project-description" onClick={() => setExpandedProject(null)}>
+                <div
+                  className="project-description"
+                  onClick={() => setExpandedProject(null)}
+                >
                   <p>{project.description}</p>
                 </div>
               </div>

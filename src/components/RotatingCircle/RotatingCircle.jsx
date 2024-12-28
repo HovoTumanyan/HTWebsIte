@@ -1,13 +1,12 @@
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import { useContext } from 'react';
-import { ThemeContext } from '../AppProvider/ThemeProvider';
-import { AnimationContext } from '../AppProvider/MainAnimationProvider';
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { useContext } from "react";
+import { ThemeContext } from "../AppProvider/ThemeProvider";
+import { AnimationContext } from "../AppProvider/MainAnimationProvider";
 
 export default function RotatingCircle({ circleLgt, circleDrk }) {
-  const {isDarkMode} = useContext(ThemeContext)
-  const { mainAnimation } = useContext(AnimationContext)
-
+  const { isDarkMode } = useContext(ThemeContext);
+  const { mainAnimation } = useContext(AnimationContext);
 
   const { t } = useTranslation();
   const rotatingCircle = {
@@ -18,7 +17,7 @@ export default function RotatingCircle({ circleLgt, circleDrk }) {
       rotate: 360,
       transition: {
         duration: 15,
-        ease: 'linear',
+        ease: "linear",
         repeat: Infinity,
       },
     },
@@ -30,7 +29,7 @@ export default function RotatingCircle({ circleLgt, circleDrk }) {
       whileInView="visible"
       viewport={{ amount: 0.1, once: true }}
       variants={mainAnimation}
-      className={`rotating-circle ${isDarkMode ? 'darkMode' : 'lightMode'}`}
+      className={`rotating-circle ${isDarkMode ? "darkMode" : "lightMode"}`}
     >
       <motion.div className="circle">
         <motion.img
@@ -43,9 +42,7 @@ export default function RotatingCircle({ circleLgt, circleDrk }) {
       </motion.div>
 
       <div className="circle-info">
-        <p>
-          {t('Circle.circleInfo')}
-        </p>
+        <p>{t("Circle.circleInfo")}</p>
       </div>
     </motion.div>
   );

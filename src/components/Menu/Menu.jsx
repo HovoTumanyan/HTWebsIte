@@ -1,10 +1,10 @@
-import { useState, useRef, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaArrowRight } from 'react-icons/fa';
-import { IoIosCloseCircleOutline } from 'react-icons/io';
-import useOutsideClick from '../../customHooks/useOutsideClick';
-import { menuItems } from '../../data';
-import './Menu.css';
+import { useState, useRef, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaArrowRight } from "react-icons/fa";
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import useOutsideClick from "../../customHooks/useOutsideClick";
+import { menuItems } from "../../data";
+import "./Menu.css";
 
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,17 +19,15 @@ export default function Menu() {
   const scrollToSection = useCallback((sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
       setIsOpen(false);
     }
   }, []);
 
- 
-
   const menuVariants = {
-    hidden: { visibility: 'hidden', x:0 },
+    hidden: { visibility: "hidden", x: 0 },
     visible: {
-      visibility: 'visible',
+      visibility: "visible",
       x: 5,
       transition: { duration: 0.4, delay: 0.4 },
     },
@@ -53,24 +51,28 @@ export default function Menu() {
   };
 
   return (
-    <div className='menu-container'>
-      <div ref={selectorRef} className={`menu ${isOpen ? 'expanded' : ''}`} aria-expanded={isOpen}>
+    <div className="menu-container">
+      <div
+        ref={selectorRef}
+        className={`menu ${isOpen ? "expanded" : ""}`}
+        aria-expanded={isOpen}
+      >
         <motion.p
           className="menu-button"
-          style={{ cursor: !isOpen ? 'pointer' : '' }}
+          style={{ cursor: !isOpen ? "pointer" : "" }}
           onClick={() => setIsOpen((prev) => !prev)}
-          aria-label={isOpen ? 'Jump to title' : 'Menu'}
+          aria-label={isOpen ? "Jump to title" : "Menu"}
           initial="hidden"
           animate="visible"
           variants={textVariants}
-          key={isOpen ? 'Jump to title' : 'Menu'}
+          key={isOpen ? "Jump to title" : "Menu"}
         >
           <AnimatePresence mode="wait">
             <motion.span
               {...textVariants}
-              key={isOpen ? 'Jump to title' : 'Menu'}
+              key={isOpen ? "Jump to title" : "Menu"}
             >
-              {isOpen ? 'Jump to title' : 'Menu'}
+              {isOpen ? "Jump to title" : "Menu"}
             </motion.span>
           </AnimatePresence>
         </motion.p>
@@ -84,7 +86,10 @@ export default function Menu() {
               exit="hidden"
               variants={closeVariants}
             >
-              <IoIosCloseCircleOutline onClick={() => setIsOpen(false)} aria-label="Close menu" />
+              <IoIosCloseCircleOutline
+                onClick={() => setIsOpen(false)}
+                aria-label="Close menu"
+              />
             </motion.div>
 
             <motion.div
@@ -93,8 +98,6 @@ export default function Menu() {
               animate="visible"
               variants={menuVariants}
             >
-           
-
               {menuItems.map(({ label, sectionId }) => (
                 <motion.a
                   key={sectionId}
@@ -106,7 +109,6 @@ export default function Menu() {
                 </motion.a>
               ))}
             </motion.div>
-
           </>
         )}
       </div>

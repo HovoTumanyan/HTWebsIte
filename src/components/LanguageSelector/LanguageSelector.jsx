@@ -1,25 +1,24 @@
-import { useState, useRef,useCallback } from 'react';
-import ReactCountryFlag from 'react-country-flag';
-import { FaChevronDown } from 'react-icons/fa';
-import { useTranslation } from 'react-i18next';
-import useOutsideClick from '../../customHooks/useOutsideClick';
+import { useState, useRef, useCallback } from "react";
+import ReactCountryFlag from "react-country-flag";
+import { FaChevronDown } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import useOutsideClick from "../../customHooks/useOutsideClick";
 
-import './LanguageSelector.css';
+import "./LanguageSelector.css";
 
 const LanguageSelector = () => {
-
   const [isOpen, setIsOpen] = useState(false);
   const { i18n } = useTranslation();
-  const country = i18n.language === 'ru';
+  const country = i18n.language === "ru";
 
   const toggleLanguage = () => {
-    const newLang = country ? 'en' : 'ru';
+    const newLang = country ? "en" : "ru";
     i18n.changeLanguage(newLang);
     setIsOpen(false);
   };
-  
+
   const selectorRef = useRef(null);
-  
+
   const handleCloseMenu = useCallback(() => {
     setIsOpen(false);
   }, []);
@@ -28,16 +27,25 @@ const LanguageSelector = () => {
 
   return (
     <div className="language-selector" ref={selectorRef}>
-      <div className="language-selector__trigger" onClick={() => setIsOpen(!isOpen)}>
-        <ReactCountryFlag countryCode={country ? 'RU' : 'GB'} className="language-selector__flag"  svg/>
-        
-        <FaChevronDown className={`language-selector__icon ${isOpen ? 'open' : ''}`} />
+      <div
+        className="language-selector__trigger"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <ReactCountryFlag
+          countryCode={country ? "RU" : "GB"}
+          className="language-selector__flag"
+          svg
+        />
+
+        <FaChevronDown
+          className={`language-selector__icon ${isOpen ? "open" : ""}`}
+        />
       </div>
 
       {isOpen && (
         <div className="language-selector__dropdown" onClick={toggleLanguage}>
           <ReactCountryFlag
-            countryCode={country ? 'GB' : 'RU'}
+            countryCode={country ? "GB" : "RU"}
             className="language-selector__flag"
             svg
           />

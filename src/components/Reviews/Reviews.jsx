@@ -1,46 +1,47 @@
-import { useState, useEffect, useContext } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { RiStarSmileFill } from 'react-icons/ri';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { reviews } from '../../data';
-import { ThemeContext } from '../AppProvider/ThemeProvider';
-import { AnimationContext } from '../AppProvider/MainAnimationProvider';
-import './Reviews.css';
-
+import { useState, useEffect, useContext } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { RiStarSmileFill } from "react-icons/ri";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { reviews } from "../../data";
+import { ThemeContext } from "../AppProvider/ThemeProvider";
+import { AnimationContext } from "../AppProvider/MainAnimationProvider";
+import "./Reviews.css";
 
 export default function Reviews({ textAnimation }) {
-  
-  const {isDarkMode} = useContext(ThemeContext)
-  const { mainAnimation } = useContext(AnimationContext)
+  const { isDarkMode } = useContext(ThemeContext);
+  const { mainAnimation } = useContext(AnimationContext);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  
   const handlePrev = () => {
     setDirection(-1);
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
+    );
   };
 
   const handleNext = () => {
     setDirection(1);
-    setCurrentIndex((prevIndex) => (prevIndex === reviews.length - 1 ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) =>
+      prevIndex === reviews.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   const reviewsAnimation = {
     hidden: (direction) => ({
-      opacity:0,
-      x: direction > 0 ? (isMobile ? 350 : 900) : (isMobile ? -350 : -900),
+      opacity: 0,
+      x: direction > 0 ? (isMobile ? 350 : 900) : isMobile ? -350 : -900,
     }),
     visible: {
       x: 0,
-      opacity:1,
+      opacity: 1,
       transition: { duration: 0.5 },
     },
     exit: (direction) => ({
-      opacity:0,
-      x: direction < 0 ? (isMobile ? 350 : 900) : (isMobile ? -350 : -900),
+      opacity: 0,
+      x: direction < 0 ? (isMobile ? 350 : 900) : isMobile ? -350 : -900,
       transition: { duration: 0.5 },
     }),
   };
@@ -50,23 +51,21 @@ export default function Reviews({ textAnimation }) {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    window.addEventListener('resize', handleResize);
-
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
-    <div className="reviews"
-    id='reviews-section'>
+    <div className="reviews" id="reviews-section">
       <motion.div
         initial="hidden"
         whileInView="visible"
         variants={mainAnimation}
         viewport={{ once: true }}
-        className={`reviews-box ${isDarkMode ? 'darkMode' : 'lightMode'}`}
+        className={`reviews-box ${isDarkMode ? "darkMode" : "lightMode"}`}
       >
         <AnimatePresence initial={true} custom={direction} mode="popLayout">
           <motion.div
@@ -87,13 +86,13 @@ export default function Reviews({ textAnimation }) {
               />
               <h4>{reviews[currentIndex].name}</h4>
             </div>
-              <pre>{reviews[currentIndex].proffesia}</pre>
+            <pre>{reviews[currentIndex].proffesia}</pre>
           </motion.div>
         </AnimatePresence>
         <div className="arrows">
-          <FaArrowLeft onClick={handlePrev} className='arrow' />
+          <FaArrowLeft onClick={handlePrev} className="arrow" />
           {currentIndex + 1}
-          <FaArrowRight onClick={handleNext} className='arrow'/>
+          <FaArrowRight onClick={handleNext} className="arrow" />
         </div>
       </motion.div>
 
@@ -102,15 +101,16 @@ export default function Reviews({ textAnimation }) {
         whileInView="visible"
         variants={mainAnimation}
         viewport={{ once: true }}
-        className={`about-reviews ${isDarkMode ? 'darkMode' : 'lightMode'}`}
+        className={`about-reviews ${isDarkMode ? "darkMode" : "lightMode"}`}
       >
-        <RiStarSmileFill size={25} style={{ padding: '5px' }} />
-        <RiStarSmileFill size={25} style={{ padding: '5px' }} />
-        <RiStarSmileFill size={25} style={{ padding: '5px' }} />
-        <RiStarSmileFill size={25} style={{ padding: '5px' }} />
-        <RiStarSmileFill size={25} style={{ padding: '5px' }} />
+        <RiStarSmileFill size={25} style={{ padding: "5px" }} />
+        <RiStarSmileFill size={25} style={{ padding: "5px" }} />
+        <RiStarSmileFill size={25} style={{ padding: "5px" }} />
+        <RiStarSmileFill size={25} style={{ padding: "5px" }} />
+        <RiStarSmileFill size={25} style={{ padding: "5px" }} />
         <h1>
-          <br />A few kind words from friends and acquaintances working in web development.
+          <br />A few kind words from friends and acquaintances working in web
+          development.
         </h1>
       </motion.div>
     </div>
