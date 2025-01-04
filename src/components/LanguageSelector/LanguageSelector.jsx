@@ -1,13 +1,14 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useContext } from "react";
 import ReactCountryFlag from "react-country-flag";
 import { FaChevronDown } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import useOutsideClick from "../../customHooks/useOutsideClick";
-
+import { ThemeContext } from "../AppProvider/ThemeProvider";
 import "./LanguageSelector.css";
 
 const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { isDarkMode } = useContext(ThemeContext);
   const { i18n } = useTranslation();
   const country = i18n.language === "ru";
 
@@ -26,7 +27,11 @@ const LanguageSelector = () => {
   useOutsideClick(selectorRef, handleCloseMenu, isOpen);
 
   return (
-    <div className="language-selector" ref={selectorRef}>
+    <div
+      className="language-selector"
+      ref={selectorRef}
+      style={{ backgroundColor: isDarkMode ? "#242424" : "#e8e8e8" }}
+    >
       <div
         className="language-selector__trigger"
         onClick={() => setIsOpen(!isOpen)}
@@ -43,7 +48,11 @@ const LanguageSelector = () => {
       </div>
 
       {isOpen && (
-        <div className="language-selector__dropdown" onClick={toggleLanguage}>
+        <div
+          className="language-selector__dropdown"
+          style={{ backgroundColor: isDarkMode ? "#242424" : "#e8e8e8" }}
+          onClick={toggleLanguage}
+        >
           <ReactCountryFlag
             countryCode={country ? "GB" : "RU"}
             className="language-selector__flag"

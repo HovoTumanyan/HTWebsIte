@@ -1,18 +1,26 @@
-import { createContext,useState } from "react";
-import { frontendSkills, backendSkills } from '../../data';
+import { createContext, useState } from "react";
+import { frontendSkills, backendSkills } from "../../data";
 
+const LanguagesContext = createContext();
 
-const LanguagesContext = createContext()
+const LanguagesProvider = ({ children }) => {
+  const [isFrontendOpen, setIsFrontendOpen] = useState(false);
+  const [isBackendOpen, setIsBackendOpen] = useState(false);
 
-const LanguagesProvider = ({children}) => {
-    const [isFrontendOpen, setIsFrontendOpen] = useState(false);
-    const [isBackendOpen, setIsBackendOpen] = useState(false);
+  const state = {
+    isFrontendOpen,
+    setIsFrontendOpen,
+    isBackendOpen,
+    setIsBackendOpen,
+    frontendSkills,
+    backendSkills,
+  };
 
-    return(
-        <LanguagesContext.Provider value={{isFrontendOpen,setIsFrontendOpen,isBackendOpen,setIsBackendOpen,frontendSkills,backendSkills}}>
-            {children}
-        </LanguagesContext.Provider>
-    )
-}
-export default LanguagesProvider
-export {LanguagesContext}
+  return (
+    <LanguagesContext.Provider value={state}>
+      {children}
+    </LanguagesContext.Provider>
+  );
+};
+export default LanguagesProvider;
+export { LanguagesContext };

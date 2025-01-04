@@ -1,8 +1,11 @@
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { Space, Switch } from 'antd';
 import { MdDarkMode, MdSunny } from 'react-icons/md';
+import { ThemeContext } from '../AppProvider/ThemeProvider';
 
-function BackGroundSwitch({ isDarkMode, setIsDarkMode }) {
+function BackGroundSwitch() {
+    const { isDarkMode, setIsDarkMode } = useContext(ThemeContext)
+    
   useEffect(() => {
     if (isDarkMode) {
       document.body.style.backgroundColor = '#242424';

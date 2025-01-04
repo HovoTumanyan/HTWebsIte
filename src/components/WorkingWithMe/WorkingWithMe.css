@@ -36,7 +36,7 @@
 
 @media (min-width: 320px) and (max-width: 480px) {
   .custom-card {
-    height: 300px;
+    height: auto;
     line-height: unset;
   }
   .custom-card p {
@@ -52,8 +52,9 @@
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .custom-card {
-    height: 300px;
+    height: auto;
   }
+
   .custom-card p {
     letter-spacing: unset;
     font-size: 20px;

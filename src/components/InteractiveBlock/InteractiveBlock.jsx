@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
 import { useContext } from "react";
-import { useTranslation } from "react-i18next";
 import { AnimationContext } from "../AppProvider/MainAnimationProvider";
 
 export default function InteractiveBlok({ text, setText }) {
   const { mainAnimation } = useContext(AnimationContext);
-  const { t } = useTranslation();
-
+  
   const handleMouseEnter = () => {
     setText("ENCOURAGER. FATHER. HUSBAND. BROTHER. FRIEND.");
   };

@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import { FaFileDownload, FaEye, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import { logEvent } from "../../analytics";
 
 export default function SocialIcons({ CV, isDarkMode, iconAnimation }) {
+  const handleViewResumeClick = () => {
+    logEvent("click", "Resume", "View Resume", 1);
+  };
+
   return (
     <div className="social-icons">
       <motion.a
@@ -15,6 +20,7 @@ export default function SocialIcons({ CV, isDarkMode, iconAnimation }) {
         whileInView="visible"
         variants={iconAnimation}
         viewport={{ amount: 0.9, once: true }}
+        onClick={handleViewResumeClick}
       >
         <FaEye size={30} style={{ color: !isDarkMode && "black" }} />
       </motion.a>

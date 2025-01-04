@@ -18,3 +18,5 @@ export { default as Reviews } from "./Reviews/Reviews";
 export { default as WorkingImage } from "./WorkingImage/WorkingImage";
 export { default as Footer } from "./Footer/Footer";
 export { default as Menu } from "./Menu/Menu";
+export { default as CookieBanner } from "./CookieBanner/CookieBanner";
+export { default as PrivacyPolicy } from "./PrivacyPolicy/PrivacyPolicy";

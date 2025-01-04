@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { MenuContext } from "../AppProvider/MenuProvider";
 
 export default function Footer({ setIsWhatsAppVisible }) {
-  const { showMenu, setShowMenu } = useContext(MenuContext);
+  const { setShowMenu } = useContext(MenuContext);
 
   return (
     <motion.footer

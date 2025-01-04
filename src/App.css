@@ -1,12 +1,9 @@
 :root {
-  --after-border-color-light: #ffff;
-  --after-border-color-dark: #e8e8e8;
-
+  --after-border-color-light: #bfbebe;
   --main-bg-light-color: #e8e8e8;
   --main-bg-dark-color: #242424;
   --main-border-color: #ebe8e54d;
   --main-border-radius: 15px;
-
   --white-color: #ffffff;
 
   line-height: 1.5;
@@ -74,6 +71,7 @@ body {
 
 .progress-bar {
   position: fixed;
+  transform: scaleX(0);
   top: 0;
   left: 0;
   right: 0;
@@ -90,19 +88,11 @@ body {
   padding: 10px 20px;
   box-sizing: border-box;
   transition: top 0.4s;
-  /* overflow: hidden; */
 }
 
 .mode-switch-wrapper > * {
   z-index: 2;
 }
-
-/* .sticky-nav {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-} */
 
 .angry-grid {
   display: grid;
@@ -241,7 +231,6 @@ body {
 }
 
 ul {
-  list-style: none;
   padding: 25px 0;
   margin: 0;
 }
