@@ -4,7 +4,7 @@ import "swiper/css/free-mode";
 import { useScroll } from "framer-motion";
 import { slides } from "./data";
 import { useTranslation } from "react-i18next";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link, Routes, Route, ScrollRestoration } from "react-router-dom";
 
 import "swiper/css";
 import "./App.css";
@@ -60,7 +60,7 @@ function App() {
     }, 5000);
   }, []);
 
-const handleScrollChange = useCallback((latest) => {
+  const handleScrollChange = useCallback((latest) => {
     setProgress(latest);
   }, []);
 
@@ -103,10 +103,10 @@ const handleScrollChange = useCallback((latest) => {
 
   return (
     <>
+      <ScrollRestoration />
       {isLoading && (
         <LoadingAnimation isLoading={isLoading} setIsLoading={setIsLoading} />
       )}
-
       {!isLoading && (
         <Routes>
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -7,7 +7,7 @@ import { ThemeContext } from "../AppProvider/ThemeProvider";
 import { AnimationContext } from "../AppProvider/MainAnimationProvider";
 import "./Reviews.css";
 
-export default function Reviews({ textAnimation }) {
+export default function Reviews() {
   const { isDarkMode } = useContext(ThemeContext);
   const { mainAnimation } = useContext(AnimationContext);
 

@@ -1,16 +1,9 @@
-import { useEffect } from "react";
-
 import "./PrivacyPolicy.css";
 
 export default function PrivacyPolicy() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="privacy-policy-container">
       <h1>Privacy Policy</h1>
-
       <section>
         <h2>1. Introduction</h2>
         <p>
