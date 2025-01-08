@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaFileDownload, FaEye, FaLinkedin } from "react-icons/fa";
+import { FaFileDownload, FaEye, FaLinkedin,FaGithub  } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { logEvent } from "../../analytics";
 
@@ -62,6 +62,19 @@ export default function SocialIcons({ CV, isDarkMode, iconAnimation }) {
         viewport={{ amount: 0.9, once: true }}
       >
         <FaLinkedin size={30} style={{ color: !isDarkMode && "black" }} />
+      </motion.a>
+
+      <motion.a
+        href="https://github.com/HovoTumanyan"
+        target="_blank"
+        rel="noopener noreferrer"
+        custom={4}
+        initial="hidden"
+        whileInView="visible"
+        variants={iconAnimation}
+        viewport={{ amount: 0.9, once: true }}
+      >
+        <FaGithub size={30} style={{ color: !isDarkMode && "black" }} />
       </motion.a>
     </div>
   );
