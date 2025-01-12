@@ -1,8 +1,10 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
+import { IsAnimation } from "./AnimationChecker";
 
 const AnimationContext = createContext();
 
 const MainAnimationProvider = ({ children }) => {
+  const { isAnimation } = useContext(IsAnimation);
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
   const mainAnimation = {
@@ -21,7 +23,7 @@ const MainAnimationProvider = ({ children }) => {
   };
 
   return (
-    <AnimationContext.Provider value={{ mainAnimation }}>
+    <AnimationContext.Provider value={{ mainAnimation:isAnimation ? mainAnimation : null }}>
       {children}
     </AnimationContext.Provider>
   );

@@ -12,13 +12,11 @@
   height: 450px;
   border-radius: var(--main-border-radius);
   object-fit: cover;
-  /* filter: grayscale(); */
-  transition: .4s all;
+  transition: 0.4s all;
 }
 
 .custom-card {
   border-radius: 15px;
-  /* display: flex; */
   height: 500px;
   line-height: 45px;
 }

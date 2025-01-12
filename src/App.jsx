@@ -38,6 +38,7 @@ import {
 
 import { MenuContext } from "./components/AppProvider/MenuProvider";
 import { ThemeContext } from "./components/AppProvider/ThemeProvider";
+import { IsAnimation } from "./components/AppProvider/AnimationChecker";
 
 function App() {
   const [currentTime, setCurrentTime] = useState("");
@@ -53,6 +54,7 @@ function App() {
 
   const { showMenu } = useContext(MenuContext);
   const { isDarkMode } = useContext(ThemeContext);
+  const { setIsAnimation } = useContext(IsAnimation);
 
   useEffect(() => {
     setTimeout(() => {
@@ -150,7 +152,12 @@ function App() {
                     fontWeight: "300",
                   }}
                 >
-                  <Link to="/privacy-policy">Privacy Policy</Link>
+                  <Link
+                    to="/privacy-policy"
+                    onClick={() => setIsAnimation(false)}
+                  >
+                    Privacy Policy
+                  </Link>
                 </pre>
                 {showBanner && <CookieBanner />}
               </div>

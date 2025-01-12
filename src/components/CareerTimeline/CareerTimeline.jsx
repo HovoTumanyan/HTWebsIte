@@ -3,8 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { useContext } from "react";
 import { ThemeContext } from "../AppProvider/ThemeProvider";
-
+import { IsAnimation } from "../AppProvider/AnimationChecker";
 export default function CareerTimeline({ slides }) {
+  const { isAnimation } = useContext(IsAnimation);
   const { isDarkMode } = useContext(ThemeContext);
 
   const slideAnimation = {
@@ -36,7 +37,7 @@ export default function CareerTimeline({ slides }) {
               <motion.div
                 initial="hidden"
                 whileInView="visible"
-                variants={slideAnimation}
+                variants={isAnimation ? slideAnimation : null}
                 viewport={{ once: true }}
                 className={`career-card ${index === 0 ? "highlight" : ""}`}
                 style={{

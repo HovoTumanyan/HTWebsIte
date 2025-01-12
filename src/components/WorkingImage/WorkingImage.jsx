@@ -1,8 +1,11 @@
 import { Developer } from "../../assets";
 import { motion } from "framer-motion";
+import { IsAnimation } from "../AppProvider/AnimationChecker";
+import { useContext } from "react";
 import "./WorkingImage.css";
 
 export default function WorkingImage() {
+  const { isAnimation } = useContext(IsAnimation);
   const imagesAnimation = {
     hidden: {
       scale: 0.9,
@@ -19,7 +22,7 @@ export default function WorkingImage() {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        variants={imagesAnimation}
+        variants={isAnimation ? imagesAnimation : null}
         viewport={{ once: true }}
         className="discous-blok"
       >

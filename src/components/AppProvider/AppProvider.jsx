@@ -1,3 +1,4 @@
+import IsAnimation from "./AnimationChecker";
 import LanguagesProvider from "./LanguagesProvider";
 import MainAnimationProvider from "./MainAnimationProvider";
 import MenuProvider from "./MenuProvider";
@@ -7,9 +8,11 @@ const AppProvider = ({ children }) => {
   return (
     <ThemeProvider>
       <MenuProvider>
-        <MainAnimationProvider>
-          <LanguagesProvider>{children}</LanguagesProvider>
-        </MainAnimationProvider>
+        <IsAnimation>
+          <MainAnimationProvider>
+            <LanguagesProvider>{children}</LanguagesProvider>
+          </MainAnimationProvider>
+        </IsAnimation>
       </MenuProvider>
     </ThemeProvider>
   );
