@@ -39,7 +39,7 @@ export default function SocialIcons({ CV, isDarkMode, iconAnimation }) {
       </motion.a>
 
       <motion.a
-        href="https://mail.google.com/mail/?view=cm&to=hovotumanyan@gmail.com"
+        href="mailto:hovotumanyan@gmail.com"
         target="_blank"
         rel="noopener noreferrer"
         custom={3}

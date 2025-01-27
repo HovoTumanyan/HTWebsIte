@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../AppProvider/ThemeProvider";
 import { AnimationContext } from "../AppProvider/MainAnimationProvider";
 
-const HeroWrapper = ({ textAnimation, CV }) => {
+const HeroWrapper = ({ CV }) => {
   const { isDarkMode } = useContext(ThemeContext);
   const { mainAnimation } = useContext(AnimationContext);
 
