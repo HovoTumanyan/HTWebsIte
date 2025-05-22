@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@babel/runtime": "^7.26.0",
+    "@babel/runtime": "^7.27.1",
     "antd": "^5.20.6",
     "core-js": "^3.39.0",
     "firebase": "^11.0.1",
